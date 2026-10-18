@@ -16,13 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="assets/fonts.css" rel="stylesheet" />
 
     <script id="tailwind-config">
         tailwind.config = {
@@ -290,6 +284,20 @@
                                 </div>
                             </div>
 
+                            <!-- Age / guardian confirmation (DPDP Act 2023: under-18s need verifiable parental consent) -->
+                            <div class="flex items-start gap-3 pt-6">
+                                <div class="flex items-center h-5">
+                                    <input id="ageCheckbox" type="checkbox" required
+                                        class="mt-1 w-4 h-4 text-primary bg-white border-border-light rounded focus:ring-primary dark:bg-surface-dark dark:border-border-dark">
+                                </div>
+                                <div class="text-sm">
+                                    <label for="ageCheckbox" class="text-sm text-text-muted dark:text-[#a8a29e]">
+                                        I am 18 years or older, or I am a parent/legal guardian giving consent on
+                                        behalf of a minor.
+                                    </label>
+                                </div>
+                            </div>
+
                             <!-- Privacy & Consent -->
                             <div class="flex items-start gap-3 pt-6 pb-2">
                                 <div class="flex items-center h-5">
@@ -503,6 +511,9 @@
         </div>
 
     </main>
+    <footer class="text-center text-xs text-text-muted py-6">
+        <a href="privacy-policy.html" class="underline hover:text-primary">Privacy Policy</a>
+    </footer>
 
 
     <!-- LOADING OVERLAY -->
@@ -857,6 +868,9 @@
 
             if (!fullNameInput || !phone) return alert("Please fill in key fields");
             if (!userData.photo) return alert("Please upload a photo");
+            if (!document.getElementById('ageCheckbox').checked) {
+                return alert("Please confirm that you are 18 or older, or a parent/guardian acting for a minor.");
+            }
             if (!consentCheckbox.checked) {
                 return alert("You must agree to the privacy policy data processing to continue.");
             }

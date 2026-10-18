@@ -114,9 +114,9 @@ watchdonationcertificate/
 | Resource | CDN URL | Purpose |
 |----------|---------|---------|
 | **Cropper.js CSS** | `https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css` | Cropper UI styles |
-| **Inter Font** | `https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900` | Primary font |
-| **Playfair Display** | `https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700` | Serif accent font |
-| **Material Symbols** | `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined` | Icon library |
+| **Inter Font** | `assets/fonts.css` (self-hosted woff2 in `assets/fonts/`) | Primary font |
+| **Playfair Display** | `assets/fonts.css` (self-hosted woff2 in `assets/fonts/`) | Serif accent font |
+| **Material Symbols** | `assets/fonts.css` (self-hosted woff2 in `assets/fonts/`) | Icon library |
 
 ### Complete Head Section Code
 
@@ -138,9 +138,7 @@ watchdonationcertificate/
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="assets/fonts.css" rel="stylesheet" />
 </head>
 ```
 
